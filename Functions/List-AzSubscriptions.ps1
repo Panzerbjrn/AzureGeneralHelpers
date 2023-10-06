@@ -28,7 +28,7 @@ Function List-AzSubscriptions {
 			ValueFromPipeline=$True,
 			ValueFromPipelineByPropertyName=$True,
 			HelpMessage='Which Azure subscription would you like to target?')]
-		[Alias('AzureSubscription')]
+		[Alias('AzSub')]
 		[string]$AzSubscription
 	)
 
@@ -40,7 +40,7 @@ Function List-AzSubscriptions {
 		Write-Verbose "Processing $($MyInvocation.Mycommand)"
 
         IF($AzSubscription){
-            Get-AzSubscription -SubscriptionName $AzSubscription | Select-Object *
+            Set-AzContext -Subscription $AzSubscription | Out-null
         }
         ELSE{
             Get-AzSubscription | Select-Object -ExpandProperty Name | Sort-Object

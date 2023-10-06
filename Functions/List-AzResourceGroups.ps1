@@ -27,9 +27,9 @@ Function List-AzResourceGroups{
 		[Parameter(Mandatory=$false,
 			ValueFromPipeline=$True,
 			ValueFromPipelineByPropertyName=$True,
-			HelpMessage='What Azure subscription would you like to target?')]
-		[Alias('AzureSubscription')]
-		[string[]]$AzSubscription
+			HelpMessage='Which Azure subscription would you like to target?')]
+		[Alias('AzSub')]
+		[string]$AzSubscription
 	)
 
 	BEGIN{
@@ -40,10 +40,12 @@ Function List-AzResourceGroups{
 		Write-Verbose "Processing $($MyInvocation.Mycommand)"
 
         IF($AzSubscription){
-            Set-AzContext -Subscription $AzSubscription
+            Set-AzContext -Subscription $AzSubscription | Out-null
         }
 
-        Get-AzResourceGroup | select -ExpandProperty ResourceGroupName | Sort
+		IF(!$AzResourceGroup){
+        	Get-AzResourceGroup | Select-Object -ExpandProperty ResourceGroupName | Sort-Object
+		}
     }
 
 	END{
