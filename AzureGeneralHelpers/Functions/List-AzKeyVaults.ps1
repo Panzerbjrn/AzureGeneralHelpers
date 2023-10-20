@@ -31,16 +31,36 @@ Function List-AzKeyVaults {
 		[string]$AzSubscription,
 
         [switch]$Ask,
-        [switch]$All,
+        [switch]$All
 	)
 
+    $KVaults = @()
 
     IF($All){
-        $KVaults = @()
-        List-AzSubscriptions | ForEach-Object {
-            Set-Azcontext $_
-            $KVaults += Get-AzKeyVault
+        Get-AzSubscription | select-Object -ExpandProperty Id | ForEach-Object {
+            $KVaults += Get-AzKeyVault -SubscriptionId $_
         }
     }
+    ELSEIF($AzSubscription){
+        Get-AzSubscription -SubscriptionName $AzSubscription | select-Object -ExpandProperty Id | ForEach-Object {
+            $KVaults += Get-AzKeyVault -SubscriptionId $_
+        }
+    }
+    ELSEIF($Ask){
+        $menu = @{}
+        $Items =  Get-AzSubscription | select Name,Id | Sort -Property Name
+        for ($i=1;$i -le $Items.count; $i++) {
+            Write-Host "$i. $($Items[$i-1].Name)"
+            $menu.Add($i,($Items[$i-1]))
+            }
 
+        [int]$ans = Read-Host 'Enter selection'
+        $AzSubscription = $menu.Item($ans)
+
+    }
+    ELSE{
+
+    }
+
+    $KVaults
 }
