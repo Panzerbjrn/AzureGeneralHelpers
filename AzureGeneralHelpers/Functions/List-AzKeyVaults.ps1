@@ -1,7 +1,7 @@
 Function List-AzKeyVaults {
 <#
 	.SYNOPSIS
-		Lists Azusre Key Vaults
+		Lists Azure Key Vaults
 
 	.DESCRIPTION
 		Lists Azusre Key Vaults, either for all contexts or the active context. Or user can be asked which context to use.

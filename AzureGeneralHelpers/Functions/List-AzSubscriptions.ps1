@@ -40,7 +40,7 @@ Function List-AzSubscriptions {
 		Write-Verbose "Processing $($MyInvocation.Mycommand)"
 
         IF($AzSubscription){
-            Get-AzSubscription $AzSubscription | Select-Object -ExpandProperty Name | Sort-Object
+            Get-AzSubscription -SubscriptionName $AzSubscription | Select-Object -ExpandProperty Name | Sort-Object
         }
         ELSE{
             Get-AzSubscription | Select-Object -ExpandProperty Name | Sort-Object
