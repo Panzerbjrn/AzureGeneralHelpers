@@ -16,7 +16,6 @@ Function List-AzKeyVaults {
 		Outputs object with VaultName and ResourceGroupName
 
 	.NOTES
-		Version:			0.1
 		Author:				Lars Panzerbjørn
 		Creation Date:		2023.10.10
 		Purpose/Change:     Initial script development
@@ -57,9 +56,13 @@ Function List-AzKeyVaults {
         [int]$ans = Read-Host 'Enter selection'
         $AzSubscription = $menu.Item($ans)
 
+        Write-OutPut $AzSubscription.Name
+        Write-OutPut $AzSubscription.Id
+        $KVaults = Get-AzKeyVault -SubscriptionId $AzSubscription.Id
+
     }
     ELSE{
-
+        $KVaults = Get-AzKeyVault
     }
 
     $KVaults

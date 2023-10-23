@@ -12,7 +12,7 @@
 RootModule = 'AzureGeneralHelpers.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.0.3'
+ModuleVersion = '1.0.0'
 
 # ID used to uniquely identify this module
 GUID = '0152f6ad-615c-48d4-b958-783293ea2594'
