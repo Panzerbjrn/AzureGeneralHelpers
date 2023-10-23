@@ -54,12 +54,11 @@ Function List-AzKeyVaults {
             }
 
         [int]$ans = Read-Host 'Enter selection'
-        $AzSubscription = $menu.Item($ans)
+        $AzSub = $menu.Item($ans)
 
-        Write-OutPut $AzSubscription.Name
-        Write-OutPut $AzSubscription.Id
-        $KVaults = Get-AzKeyVault -SubscriptionId $AzSubscription.Id
-
+        Write-OutPut $AzSub.Name
+        Write-OutPut $AzSub.Id
+        $KVaults = Get-AzKeyVault -SubscriptionId $AzSub.Id
     }
     ELSE{
         $KVaults = Get-AzKeyVault
