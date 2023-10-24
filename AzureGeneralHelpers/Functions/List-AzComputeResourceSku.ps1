@@ -4,7 +4,7 @@ Function List-AzComputeResourceSku {
 		Lists Azusre Compute Resource Skus
 
 	.DESCRIPTION
-		Lists Azusre Compute Resource Skus. Will ask for region if none is specified.
+		Lists Azure Compute Resource Skus. Will ask for region if none is specified.
 
 	.EXAMPLE
 		List-AzComputeResourceSku

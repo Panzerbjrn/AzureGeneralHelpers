@@ -4,7 +4,7 @@ Function List-AzKeyVaults {
 		Lists Azure Key Vaults
 
 	.DESCRIPTION
-		Lists Azusre Key Vaults, either for all contexts or the active context. Or user can be asked which context to use.
+		Lists Azure Key Vaults, either for all contexts or the active context. Or user can be asked which context to use.
 
 	.EXAMPLE
 		Lists Azusre Key Vaults
