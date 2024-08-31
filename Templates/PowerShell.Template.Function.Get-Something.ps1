@@ -1,37 +1,37 @@
 ##From https://docs.microsoft.com/en-us/previous-versions/technet-magazine/hh360993(v=msdn.10)
 Function Get-Something {
-<#
-	.SYNOPSIS
-		Describe the function here
+	<#
+		.SYNOPSIS
+			Describe the function here
 
-	.DESCRIPTION
-		Describe the function in more detail
+		.DESCRIPTION
+			Describe the function in more detail
 
-	.EXAMPLE
-		Give an example of how to use it
+		.EXAMPLE
+			Give an example of how to use it
 
-	.EXAMPLE
-		Give another example of how to use it
+		.EXAMPLE
+			Give another example of how to use it
 
-	.PARAMETER ComputerName
-		The Computer name to query. Just one.
+		.PARAMETER ComputerName
+			The Computer name to query. Just one.
 
-	.PARAMETER LogName
-		The name of a file to write failed Computer names to. Defaults to errors.txt.
+		.PARAMETER LogName
+			The name of a file to write failed Computer names to. Defaults to errors.txt.
 
-	.INPUTS
-		Input is from command line or called from a script.
+		.INPUTS
+			Input is from command line or called from a script.
 
-	.OUTPUTS
-		This will output the logfile.
+		.OUTPUTS
+			This will output the logfile.
 
-	.NOTES
-		Version:			0.1
-		Author:				Lars Panzerbjørn
-		Creation Date:		2020.05.12
-		Purpose/Change: Initial script development
-#>
-	[CmdletBinding()]
+		.NOTES
+			Version:			0.1
+			Author:				Lars Panzerbjørn
+			Creation Date:		2020.05.12
+			Purpose/Change: Initial script development
+	#>
+		[CmdletBinding()]
 	param
 	(
 		[Parameter(Mandatory=$True,
