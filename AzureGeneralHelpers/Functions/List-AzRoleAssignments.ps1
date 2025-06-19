@@ -34,6 +34,7 @@ Function List-AzRoleAssignments {
 			ValueFromPipelineByPropertyName=$True,
 			HelpMessage='Which Object Type would you like to target?')]
 		[Alias('Type')]
+		[ValidateSet('User', 'ServicePrincipal')]
 		[string]$ObjectType,
 
         [switch]$Ask,
@@ -57,7 +58,7 @@ Function List-AzRoleAssignments {
         [int]$ans = Read-Host 'Enter selection'
         $AzSub = $menu.Item($ans)
 
-         $AzRoleAssignments = Get-AzRoleAssignment -Scope "/subscriptions/$($AzSub.Id)"
+        $AzRoleAssignments = Get-AzRoleAssignment -Scope "/subscriptions/$($AzSub.Id)"
     }
     IF($AzSubscription){
         $AzRoleAssignments = Get-AzRoleAssignment -Scope "/subscriptions/$(Get-AzSubscription -SubscriptionName $AzSubscription)"
