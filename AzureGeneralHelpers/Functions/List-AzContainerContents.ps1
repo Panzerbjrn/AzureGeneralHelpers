@@ -23,28 +23,28 @@ Function List-AzContainerContents{
 #>
 	[CmdletBinding()]
 	param(
-		[Parameter(Mandatory=$false,
+		[Parameter(
 			ValueFromPipeline=$True,
 			ValueFromPipelineByPropertyName=$True,
 			HelpMessage='Which Azure subscription would you like to target?')]
 		[Alias('AzSub')]
 		[string]$AzSubscription,
 
-		[Parameter(Mandatory=$false,
+		[Parameter(
 			ValueFromPipeline=$True,
 			ValueFromPipelineByPropertyName=$True,
 			HelpMessage='Which Azure resource group would you like to target?')]
 		[Alias('AzRG')]
 		[string]$AzResourceGroup,
 
-		[Parameter(Mandatory=$false,
+		[Parameter(
 			ValueFromPipeline=$True,
 			ValueFromPipelineByPropertyName=$True,
 			HelpMessage='Which Azure storage account would you like to target?')]
 		[Alias('AzSA')]
 		[string]$AzStorageAccount,
 
-		[Parameter(Mandatory=$false,
+		[Parameter(
 			ValueFromPipeline=$True,
 			ValueFromPipelineByPropertyName=$True,
 			HelpMessage='Which Azure storage container would you like to target?')]

@@ -24,7 +24,7 @@ Function List-AzResourceGroups{
 	[CmdletBinding()]
 	param
 	(
-		[Parameter(Mandatory=$false,
+		[Parameter(
 			ValueFromPipeline=$True,
 			ValueFromPipelineByPropertyName=$True,
 			HelpMessage='Which Azure subscription would you like to target?')]
