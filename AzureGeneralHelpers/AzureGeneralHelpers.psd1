@@ -30,7 +30,7 @@ CompanyName = 'Ordo Ursus'
 Copyright = '(c) Lars Panzerbjørn. All rights reserved.'
 
 # Description of the functionality provided by this module
-Description = 'Module to help with simple Azure tasks'
+Description = 'Module to help with simple Azure tasks. This has been frozen now. Please switch to AzureGeneralHelperModule'
 
 # Minimum version of the PowerShell engine required by this module
 PowerShellVersion = '5.0'
