@@ -1,7 +1,7 @@
 #region Script Header
 #	NAME: AzureGeneralHelpers.psm1
 #	AUTHOR: Lars Panzerbjørn
-#	CONTACT: lpetersson@hotmail.com / GitHub: Panzerbjrn
+#	GitHub: Panzerbjrn
 #	DATE: 2023.10.05
 #	VERSION: 0.1 - 2023.10.05 - Module Created with Create-NewModuleStructure by Lars Panzerbjørn
 #
